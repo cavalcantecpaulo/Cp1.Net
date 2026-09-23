@@ -61,8 +61,10 @@ public struct Pessoa
                 Console.WriteLine("Data inválida");
                 return null;
             }
-           
-            return new Pessoa(nome, dataCorreta);
+           if(nome is not null)
+                return new Pessoa(nome, dataCorreta);
+
+           return null;     
         }
         Console.WriteLine("Não foi possível converter data.");
         return null;
